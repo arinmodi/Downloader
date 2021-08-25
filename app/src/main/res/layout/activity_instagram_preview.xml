@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.instagram_preview">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FAFAFA"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/ig_light"
+            android:paddingBottom="50dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/back_insta"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/back"
+                android:clickable="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:focusable="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Preview"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:paddingVertical="10dp"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:visibility="gone"
+            android:id="@+id/pic_con"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="-40dp"
+            app:cardCornerRadius="80dp"
+            app:cardPreventCornerOverlap="true"
+        >
+
+            <ImageView
+                android:id="@+id/profile_pic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/demoprofile"
+                android:scaleType="fitXY"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/data_insta_post"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/page_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Page Name"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="20dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            />
+
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:scrollbars="none"
+            android:divider="@null"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/insta_post" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/progress_insta"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        style="@style/SpinKitView.Large.FadingCircle"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        app:SpinKit_Color="@color/facebook_dark" />
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:id="@+id/private_post"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/error"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Private Post or Restricated Access!"
+            android:textColor="#474747"
+            android:textSize="16dp"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="or invalid url"
+            android:textColor="@color/youtube_dark"
+            android:textSize="16dp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+</RelativeLayout>

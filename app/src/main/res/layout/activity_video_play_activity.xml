@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.video_play_activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/video_play_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/youtube_light"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="15dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/back_video_play"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/back"
+                android:clickable="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:focusable="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Preview"
+                android:textColor="@color/white"
+                android:layout_marginLeft="-35dp"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:layout_gravity="center"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="10dp"
+            android:alpha="0"
+            android:id="@+id/video_con">
+
+            <VideoView
+                android:id="@+id/video_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:elevation="10dp"
+                />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/buffering"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                style="@style/SpinKitView.Large.Circle"
+                android:layout_centerInParent="true"
+                app:SpinKit_Color="@color/facebook_light" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/video_load"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        style="@style/SpinKitView.Large.FadingCircle"
+        android:layout_centerInParent="true"
+        app:SpinKit_Color="@color/youtube_light" />
+
+</RelativeLayout>

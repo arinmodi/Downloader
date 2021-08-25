@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#007CC8</color>
+    <color name="colorPrimaryDark">#036CAC</color>
+    <color name="colorAccent">#101010</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="offwhite">#F5F5F5</color>
+
+    <color name="ig_light">#FF6FA0</color>
+    <color name="ig_dark">#E1306C</color>
+
+    <color name="youtube_light">#FF7777</color>
+    <color name="youtube_dark">#FF5858</color>
+
+    <color name="facebook_light">#628DE8</color>
+    <color name="facebook_dark">#3B5998</color>
+
+    <color name="audio_light">#BC80DA</color>
+    <color name="audio_dark">#8C5BA4</color>
+
+    <color name="whatsapp_light">#84BD81</color>
+    <color name="whatsapp_dark">#64B161</color>
+</resources>

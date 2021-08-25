@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.audio_extract">
+
+    <LinearLayout
+        android:id="@+id/audio_preview_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/audio_light"
+        android:paddingBottom="50dp"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/back_audio_preview"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/back"
+            android:clickable="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:focusable="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Preview"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:paddingVertical="10dp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/video_preview_audio"
+        android:layout_below="@+id/audio_preview_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="-20dp"
+        android:layout_centerHorizontal="true"
+        app:cardElevation="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/thumbnail_video_audio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxHeight="250dp"
+                android:adjustViewBounds="true"
+                android:background="@color/black"
+                android:src="@drawable/thumbnail"
+                android:foreground="#40000000"
+                android:scaleType="fitCenter" />
+
+            <ImageView
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxHeight="35dp"
+                android:maxWidth="35dp"
+                android:padding="5dp"
+                android:id="@+id/audio_video_play"
+                android:adjustViewBounds="true"
+                android:src="@drawable/play"
+                android:layout_centerInParent="true"
+                android:background="@drawable/circle_black" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/filename"
+        android:layout_below="@+id/video_preview_audio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Video Title"
+        android:textSize="16dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:maxLines="2"
+        android:ellipsize="end"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/duration_data"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_below="@+id/filename">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Video Duration : "
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/duration"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="18 sec "
+            android:textSize="14dp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="@color/audio_dark"
+            />
+
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_below="@+id/duration_data"
+        android:clickable="true"
+        android:id="@+id/extract_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="40dp"
+        app:cardBackgroundColor="@color/audio_light"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="5dp"
+        android:theme="@style/ClickableView"
+        android:layout_marginHorizontal="100dp"
+        android:focusable="true">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Extract Audio"
+            android:gravity="center"
+            android:paddingVertical="10dp"
+            android:textSize="16dp"
+            android:textColor="@color/white" />
+
+    </androidx.cardview.widget.CardView>
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/progress_extract"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        style="@style/SpinKitView.Large.FadingCircle"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        app:SpinKit_Color="@color/audio_dark" />
+
+
+</RelativeLayout>

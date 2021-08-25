@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        android:layout_marginVertical="15dp"
+        app:cardPreventCornerOverlap="true"
+        android:elevation="15dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/display_con"
+            android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="fitCenter"
+            android:background="@color/black"
+            android:src="@drawable/demoprofile"
+            android:foreground="#33000000"
+            android:id="@+id/display_image" />
+
+        <ImageView
+            android:id="@+id/video_insta"
+            android:visibility="gone"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/play"
+            android:layout_centerInParent="true"
+            android:padding="5dp"
+            android:background="@drawable/circle_black"
+            />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_below="@id/display_con"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:weightSum="2">
+
+            <androidx.cardview.widget.CardView
+                android:clickable="true"
+                android:id="@+id/download_button_insta"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/ig_dark"
+                app:cardElevation="3dp"
+                app:cardCornerRadius="5dp"
+                android:layout_weight="1.5"
+                android:theme="@style/ClickableView"
+                android:layout_marginRight="90dp"
+                android:focusable="true">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Download"
+                    android:gravity="center"
+                    android:paddingVertical="10dp"
+                    android:textSize="16dp"
+                    android:textColor="@color/white" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/insta_download_size"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="64MB"
+                android:textSize="16dp"
+                android:textColor="@color/youtube_dark"
+                android:textStyle="bold"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>
