@@ -55,13 +55,13 @@ class MainActivity : AppCompatActivity() {
         cat_list.add(
             CategoryModel(
                 R.drawable.youtubeinputscreen,
-                "You-Tube",
+                "Tube-Video",
                 R.drawable.youtube_icon,
                 R.color.youtube_dark,
                 R.color.youtube_light,
                 R.drawable.youtubeinputscreen,
                 "e.g. https://www.youtube.com/watch?",
-                "Enter the URl of You-Tube Video"
+                "Enter the URl of Video here"
             )
         )
 

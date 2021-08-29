@@ -29,6 +29,7 @@
             android:id="@+id/icon_input_hd"
             android:layout_width="70dp"
             android:layout_height="70dp"
+            android:scaleType="centerInside"
             android:src="@drawable/youtubeinputscreen"
             android:layout_gravity="center" />
 
