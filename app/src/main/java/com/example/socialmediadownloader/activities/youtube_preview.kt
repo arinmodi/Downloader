@@ -197,7 +197,7 @@ class youtube_preview : AppCompatActivity() {
         newdownloadmodel.progress = "0"
         newdownloadmodel.is_paused = false
         newdownloadmodel.total_size = sizetext.text.toString()
-        newdownloadmodel.platfrom = R.drawable.youtubeinputscreen
+        newdownloadmodel.platfrom = R.drawable.tube_input_screen
         newdownloadmodel.date = formattedDate
 
         realm.executeTransactionAsync(object : Realm.Transaction {

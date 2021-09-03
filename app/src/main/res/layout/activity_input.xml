@@ -30,14 +30,14 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:scaleType="centerInside"
-            android:src="@drawable/youtubeinputscreen"
+            android:src="@drawable/tube_input_screen"
             android:layout_gravity="center" />
 
         <TextView
             android:id="@+id/d_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="You-Tube"
+            android:text="Video"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="18dp"
@@ -68,7 +68,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Enter the url of You-Tube Video"
+                android:text="Enter the url of Video"
                 android:textSize="18dp"
                 android:layout_marginTop="20dp"
                 android:textColor="@color/black"
@@ -109,7 +109,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="textUri"
                         android:background="@color/white"
-                        android:hint="e.g. https://www.youtube.com"
+                        android:hint="e.g. paste link here"
                         android:textSize="14dp"
                         android:paddingLeft="10dp"
                         android:isScrollContainer="true"
