@@ -60,8 +60,8 @@ class MainActivity : AppCompatActivity() {
                 R.color.tube_dark,
                 R.color.tube_light,
                 R.drawable.tube_input_screen,
-                "e.g. Enter the link here",
-                "paste link here"
+                "e.g. Paste link here",
+                "Enter the link here"
             )
         )
 

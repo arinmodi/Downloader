@@ -74,7 +74,7 @@ class youtube_preview : AppCompatActivity() {
         registerReceiver(onComplete, IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE))
 
         if(Build.VERSION.SDK_INT > 21){
-            window.statusBarColor = resources.getColor(R.color.youtube_dark)
+            window.statusBarColor = resources.getColor(R.color.tube_dark)
         }
 
         back_y.setOnClickListener {
@@ -101,10 +101,10 @@ class youtube_preview : AppCompatActivity() {
 
         play_button_youtube.setOnClickListener{
             val intent = Intent(this,video_play_activity::class.java)
-            intent.putExtra("header",R.color.youtube_light)
+            intent.putExtra("header",R.color.tube_light)
             intent.putExtra("isuri",true)
             intent.putExtra("path",downloadurl)
-            intent.putExtra("toolbar", R.color.youtube_dark)
+            intent.putExtra("toolbar", R.color.tube_dark)
             startActivity(intent)
         }
 
