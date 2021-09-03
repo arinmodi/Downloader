@@ -15,7 +15,7 @@
             android:id="@+id/video_play_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/youtube_light"
+            android:background="@color/tube_light"
             android:paddingHorizontal="10dp"
             android:paddingVertical="15dp"
             android:orientation="horizontal">
@@ -76,6 +76,6 @@
         android:layout_height="50dp"
         style="@style/SpinKitView.Large.FadingCircle"
         android:layout_centerInParent="true"
-        app:SpinKit_Color="@color/youtube_light" />
+        app:SpinKit_Color="@color/tube_light" />
 
 </RelativeLayout>

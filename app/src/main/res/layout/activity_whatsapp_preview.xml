@@ -109,7 +109,7 @@
                     android:textSize="14dp"
                     android:text="Loading... "
                     android:layout_marginLeft="10dp"
-                    android:textColor="@color/youtube_dark"
+                    android:textColor="@color/tube_dark"
                     android:textStyle="bold"
                     />
 

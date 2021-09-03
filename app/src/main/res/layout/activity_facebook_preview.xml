@@ -176,7 +176,7 @@
                         android:layout_weight="0.5"
                         android:text="Loading..."
                         android:textSize="16dp"
-                        android:textColor="@color/youtube_dark"
+                        android:textColor="@color/tube_dark"
                         android:textStyle="bold"
                         android:layout_gravity="center" />
 
@@ -229,7 +229,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="check url"
-            android:textColor="@color/youtube_dark"
+            android:textColor="@color/tube_dark"
             android:textSize="16dp"
             android:gravity="center" />
 

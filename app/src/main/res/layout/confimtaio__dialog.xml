@@ -96,7 +96,7 @@
                     android:layout_marginLeft="20dp"
                     android:theme="@style/ClickableView"
                     android:layout_weight="0.8"
-                    app:cardBackgroundColor="@color/youtube_dark"
+                    app:cardBackgroundColor="@color/tube_dark"
                     android:clickable="true"
                     app:cardCornerRadius="5dp"
                     android:focusable="true">

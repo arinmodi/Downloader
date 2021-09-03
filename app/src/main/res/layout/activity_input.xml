@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:paddingVertical="20dp"
         android:id="@+id/header"
-        android:background="@color/youtube_light"
+        android:background="@color/tube_light"
         android:orientation="vertical">
 
         <ImageButton
@@ -128,7 +128,7 @@
                     android:layout_marginLeft="5dp"
                     app:cardElevation="5dp"
                     android:layout_marginRight="5dp"
-                    app:cardBackgroundColor="@color/youtube_dark"
+                    app:cardBackgroundColor="@color/tube_dark"
                     android:foreground="?attr/selectableItemBackgroundBorderless"
                     app:cardCornerRadius="5dp"
                     android:focusable="true">
@@ -161,7 +161,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="20dp"
-                    app:cardBackgroundColor="@color/youtube_light"
+                    app:cardBackgroundColor="@color/tube_light"
                     app:cardElevation="3dp"
                     app:cardCornerRadius="5dp"
                     android:layout_marginHorizontal="100dp"

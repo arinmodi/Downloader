@@ -64,7 +64,7 @@
                         android:layout_marginLeft="5dp"
                         android:text="64 MB"
                         android:id="@+id/total_size"
-                        android:textColor="@color/youtube_dark"
+                        android:textColor="@color/tube_dark"
                         />
 
                 </LinearLayout>

@@ -89,7 +89,7 @@
                 android:layout_weight="0.5"
                 android:text="64MB"
                 android:textSize="16dp"
-                android:textColor="@color/youtube_dark"
+                android:textColor="@color/tube_dark"
                 android:textStyle="bold"
                 android:layout_gravity="center" />
 
