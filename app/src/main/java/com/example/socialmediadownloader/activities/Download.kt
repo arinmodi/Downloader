@@ -86,9 +86,9 @@ class Download : AppCompatActivity() {
                 if(file.exists()){
                     val selectedUri = Uri.parse(model.file_path)
                     val intent = Intent(Intent.ACTION_VIEW)
-                    if(model.file_path.contains(".mp4")){
+                    if(model.file_path.endsWith(".mp4")){
                         intent.setDataAndType(selectedUri, "video/*")
-                    }else if(model.file_path.contains(".png")){
+                    }else if(model.file_path.endsWith(".png") || model.file_path.endsWith(".jpg") || model.file_path.endsWith(".jpeg") ){
                         intent.setDataAndType(selectedUri, "image/*")
                     }else{
                         intent.setDataAndType(selectedUri, "*/*")

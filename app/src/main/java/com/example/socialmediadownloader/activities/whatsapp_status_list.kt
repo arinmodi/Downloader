@@ -79,15 +79,15 @@ class whatsapp_status_list : AppCompatActivity() {
                 WHATSAPP_STATUS_FOLDER_PATH  = "/Android/media/com.whatsapp/WhatsApp/Media/.Statuses/"
             }
 
-            Log.e("external st: ",Environment.getExternalStorageDirectory().toString() )
-
             val file = File(
-                Environment.getExternalStorageDirectory().toString() + WHATSAPP_STATUS_FOLDER_PATH
+                Environment.getExternalStorageDirectory().absolutePath + WHATSAPP_STATUS_FOLDER_PATH
             )
             val listfiles = file.listFiles()
 
             if (listfiles != null) {
                 for (status in listfiles) {
+
+                    Log.e("Status : ", status.name)
 
                     if (status.name.endsWith(".jpg") || status.name.endsWith(".jpeg") || status.name.endsWith(".png") || status.name.endsWith(".mp4")) {
                         val model = status.absolutePath

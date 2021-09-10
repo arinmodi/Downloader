@@ -31,6 +31,8 @@ open class Staus_Adapter(val context: Activity, val files : ArrayList<String>) :
 
             if(currentStatus.endsWith(".mp4")){
                 holder.itemView.status_play.visibility = View.VISIBLE
+            }else{
+                holder.itemView.status_play.visibility = View.GONE
             }
 
             holder.itemView.staus_item.setOnClickListener {
