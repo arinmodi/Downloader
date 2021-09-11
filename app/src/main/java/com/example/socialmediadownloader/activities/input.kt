@@ -105,7 +105,7 @@ class input : AppCompatActivity() {
                 toast.show()
             }else{
                 when(data.cat_name){
-                    "You-Tube" -> {
+                    "Video" -> {
                         if (urlinput.contains("youtube") || urlinput.contains("youtu.be")) {
                             progress.visibility = View.VISIBLE
                             GetYouTubeDownloadUrl(urlinput)
