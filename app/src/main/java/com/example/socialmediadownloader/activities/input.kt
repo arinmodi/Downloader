@@ -114,7 +114,7 @@ class input : AppCompatActivity() {
                             progress.visibility = View.GONE
                             Toast.makeText(
                                 this,
-                                "please provide a youtube video url!",
+                                "please provide a valid video url!",
                                 Toast.LENGTH_LONG
                             ).show()
                         }
