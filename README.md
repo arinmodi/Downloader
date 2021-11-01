@@ -34,11 +34,11 @@
 
 Home               |  Input               | Preview              
 :-------------------------:|:-------------------------:|:-------------------------:
-|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/Home.png" height = 450/>|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/input.png" height = 450/>|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/preview.png" height = 450/>|
+|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/Home.png" width = 250/>|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/input.png" width = 250/>|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/preview.png" width = 250/>|
 
 Progress               |  Audio Extractor              | Downloads           
 :-------------------------:|:-------------------------:|:-------------------------:
-|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/progress.png" height = 450/>|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/audio.png" height = 450/>|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/downloads.png" height = 450/>
+|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/progress.png" width = 250/>|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/audio.png" width = 250/>|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/downloads.png" width = 250/>
 
 <br>
 
