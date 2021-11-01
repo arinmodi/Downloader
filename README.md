@@ -18,19 +18,7 @@
 
 <br>
 
-## :camera: Screenshots:
-
-Home               |  Input               | Preview              
-:-------------------------:|:-------------------------:|:-------------------------:
-|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/Home.png" height = 450/>|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/input.png" height = 450/>|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/preview.png" height = 450/>|
-
-Progress               |  Audio Extractor              | Downloads           
-:-------------------------:|:-------------------------:|:-------------------------:
-|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/progress.png" height = 450/>|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/audio.png" height = 450/>|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/downloads.png" height = 450/>
-
-<br>
-
-## :eyes: Software Overview : <br>
+## :mag: Software Overview : <br>
 
 <p> 
 
@@ -42,4 +30,37 @@ Progress               |  Audio Extractor              | Downloads
 
 <br>
 
-## :laptop: Features :
+## :camera_flash: Screenshots:
+
+Home               |  Input               | Preview              
+:-------------------------:|:-------------------------:|:-------------------------:
+|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/Home.png" height = 450/>|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/input.png" height = 450/>|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/preview.png" height = 450/>|
+
+Progress               |  Audio Extractor              | Downloads           
+:-------------------------:|:-------------------------:|:-------------------------:
+|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/progress.png" height = 450/>|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/audio.png" height = 450/>|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/downloads.png" height = 450/>
+
+<br>
+
+
+## :medal_sports: Features :
+
+-	Download any Video from social media
+-	Live progress of your video
+-	Identify the download size before downloading video
+-	Download history
+-	Easy Copy and paste feature
+-	In built audio extractor
+-	Status downloader also included
+-	Easy to use, simple user interface
+
+<br>
+
+
+## :iphone: How to use :
+
+-	Copy the link of video or post you want to download
+-	Open the app, Choose the downloader type
+-	Paste the link 
+-	Check out the preview of your video 
+-	Click on download to start downloading
