@@ -64,3 +64,13 @@ Progress               |  Audio Extractor              | Downloads
 -	Paste the link 
 -	Check out the preview of your video 
 -	Click on download to start downloading
+
+<br>
+
+<h2><p align="center">
+  Get it on
+</p></h2>
+
+[<p align="center"><img src="https://betweenfriendscoffee.com/wp-content/uploads/2018/04/Android-app-on-Google-play-logo-vector-2.png" 
+     alt="Get it on Play"
+     height=60 /></p>](https://play.google.com/store/apps/details?id=com.GenZ.socialmediadownloader)
