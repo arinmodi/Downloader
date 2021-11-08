@@ -40,11 +40,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:weightSum="3"
                 android:layout_marginTop="8dp">
 
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.2"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
@@ -70,24 +72,34 @@
                 </LinearLayout>
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="14dp"
-                    android:text="-"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="15dp" />
-
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.1"
                     android:layout_height="wrap_content"
                     android:id="@+id/download_date"
                     android:textSize="14dp"
                     android:text="12/03/2003"
                     android:textColor="@color/black"
-                    android:layout_marginLeft="15dp" />
+                    android:layout_marginStart="10dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:layout_weight="0.4">
+
+                <ImageView
+                    android:id="@+id/share"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:clickable="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/share"
+                    android:focusable="true" />
+
+                </LinearLayout>
+
 
             </LinearLayout>
 

@@ -200,7 +200,9 @@ class whatsapp_preview : AppCompatActivity() {
                     var filepath = result.get(1)
                     var title = result.get(0)
 
+                    val re = Regex("[^A-Za-z0-9% ]")
                     title = title.substring(0,title.indexOf("."))
+                    title = re.replace(title,"-")
 
                     newdownloadmodel = DownloadModel();
                     newdownloadmodel.id = nextid.toLong()

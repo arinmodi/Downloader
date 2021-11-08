@@ -43,18 +43,30 @@ import android.media.MediaFormat
 
 import android.media.MediaMuxer
 import android.view.View
+import com.example.socialmediadownloader.model.DownloadModel
+import io.realm.Realm
+import io.realm.RealmConfiguration
+import kotlinx.android.synthetic.main.activity_whatsapp_preview.*
 import java.nio.ByteBuffer
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.HashMap
 
 
 class audio_extract : AppCompatActivity() {
 
     lateinit var videostoragepath: String
+    lateinit var newdownloadmodel : DownloadModel
+    lateinit var realm : Realm
+    val config = RealmConfiguration.Builder()
+        .allowWritesOnUiThread(true)
+        .build()
+
     var file_name = ""
     var totalDur = 0
     lateinit var extraction_dialog: Extrcation_Dialog
     var dest = ""
     var videolenghtInSec: Long = 0
-    var loop = true
 
     private val DEFAULT_BUFFER_SIZE = 1 * 1024 * 1024
     private val TAG = "AudioExtractorDecoder"
@@ -74,6 +86,8 @@ class audio_extract : AppCompatActivity() {
             window.statusBarColor = resources.getColor(R.color.audio_dark)
         }
 
+        realm = Realm.getInstance(config)
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
                 CHANNEL_ID,
@@ -89,7 +103,6 @@ class audio_extract : AppCompatActivity() {
         }
 
         file_name = intent.getStringExtra("name").toString()
-        val path = intent.getStringExtra("path")
         videostoragepath = intent.getStringExtra("uri").toString()
 
 
@@ -203,7 +216,7 @@ class audio_extract : AppCompatActivity() {
 
             Log.e("Total Duration", totalDur.toString())
 
-            val extractor = MediaExtractor()
+            val extractor  = MediaExtractor()
             extractor.setDataSource(srcPath)
             val trackCount: Int = extractor.getTrackCount()
             Log.e("track count : ", trackCount.toString())
@@ -254,7 +267,6 @@ class audio_extract : AppCompatActivity() {
             var trackIndex = -1
             val dstBuf: ByteBuffer = ByteBuffer.allocate(bufferSize)
             val bufferInfo = MediaCodec.BufferInfo()
-            Log.e("Buffer Size : ", bufferSize.toString())
             muxer.start()
             var extractedbuffer = 0
             while (true) {
@@ -268,7 +280,6 @@ class audio_extract : AppCompatActivity() {
                 } else {
                     bufferInfo.presentationTimeUs = extractor.sampleTime
                     if (endMs > 0 && bufferInfo.presentationTimeUs > endMs * 1000) {
-                        Log.e(TAG, "The current sample is over the trim end time.")
                         break
                     } else {
                         bufferInfo.flags = extractor.sampleFlags
@@ -279,14 +290,46 @@ class audio_extract : AppCompatActivity() {
                 }
             }
 
-            Log.e("Final Buffers: ", extractedbuffer.toString())
-
             muxer.stop()
             muxer.release()
 
             runOnUiThread {
-                extraction_dialog.dismiss()
-                Toast.makeText(this@audio_extract, "Extraction Complted", Toast.LENGTH_LONG).show()
+                val currentnum = realm.where<DownloadModel>(DownloadModel::class.java).max("id")
+                var nextid  = 0
+
+                if(currentnum == null){
+                    nextid = 1
+                }else{
+                    nextid = currentnum.toInt() + 1
+                }
+
+                val c: Date = Calendar.getInstance().getTime()
+                val df = SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault())
+                val formattedDate: String = df.format(c)
+
+                val re = Regex("[^A-Za-z0-9% ]")
+                var title = file_name
+                title = re.replace(title,"-")
+
+                newdownloadmodel = DownloadModel();
+                newdownloadmodel.id = nextid.toLong()
+                newdownloadmodel.downloadId = 123
+                newdownloadmodel.title = title
+                newdownloadmodel.file_path = dest
+                newdownloadmodel.file_size = "0"
+                newdownloadmodel.status = "Downloading"
+                newdownloadmodel.progress = "0"
+                newdownloadmodel.is_paused = false
+                newdownloadmodel.total_size = functions().millisecondsToHumanReadble(totalDur)
+                newdownloadmodel.platfrom = R.drawable.headphone
+                newdownloadmodel.date = formattedDate
+
+                realm.executeTransactionAsync(object : Realm.Transaction {
+                    override fun execute(realm: Realm) {
+                        realm.copyToRealm(newdownloadmodel)
+                    }
+                })
+
                 val selectedUri = Uri.parse(dest)
                 val intent = Intent(Intent.ACTION_VIEW)
                 intent.setDataAndType(selectedUri, "audio/*")
@@ -309,6 +352,8 @@ class audio_extract : AppCompatActivity() {
 
                 val managerCompat = NotificationManagerCompat.from(this@audio_extract)
                 managerCompat.notify(1, notification.build())
+                extraction_dialog.dismiss()
+                Toast.makeText(this@audio_extract, "Extraction Complted", Toast.LENGTH_LONG).show()
                 finish()
             }
 
@@ -338,42 +383,5 @@ class audio_extract : AppCompatActivity() {
     }
 
 }
-
-
-    /*
-
-                        Log.e("S : ", message + command)
-                    Toast.makeText(this@audio_extract, "Extraction Complted", Toast.LENGTH_LONG)
-                        .show()
-                    val selectedUri = Uri.parse(dest)
-                    val intent = Intent(Intent.ACTION_VIEW)
-                    intent.setDataAndType(selectedUri, "audio/*")
-                    val contentintent = PendingIntent.getActivity(
-                        this@audio_extract,
-                        0,
-                        intent,
-                        PendingIntent.FLAG_CANCEL_CURRENT
-                    )
-                    val notification = NotificationCompat.Builder(this@audio_extract, CHANNEL_ID)
-                    notification.setContentTitle("DL-All In One Downloader")
-                    notification.setContentText("Audio is sucessfully Extracted from your file")
-                    notification.setSmallIcon(R.drawable.download)
-                    if (Build.VERSION.SDK_INT > 23) {
-                        notification.setColor(getColor(R.color.colorPrimary))
-                    }
-                    notification.setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                    notification.setAutoCancel(true)
-                    notification.setContentIntent(contentintent)
-
-                    val managerCompat = NotificationManagerCompat.from(this@audio_extract)
-                    managerCompat.notify(1, notification.build())
-                    extraction_dialog.dismiss()
-                    finish()
-
-
-     */
-
-
-     */
 
 

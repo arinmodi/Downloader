@@ -42,6 +42,12 @@ open class DownloadAdpeter(private val context: Context, private var list: Array
                     onClickListener!!.onClick(position,model)
                 }
             }
+
+            holder.itemView.share.setOnClickListener {
+                if(onClickListener != null){
+                    onClickListener!!.onShareClick(position,model)
+                }
+            }
         }
 
     }
@@ -58,11 +64,14 @@ open class DownloadAdpeter(private val context: Context, private var list: Array
 
     interface OnClickListener {
         fun onClick(position: Int, model: DownloadModel)
+        fun onShareClick(position: Int, model: DownloadModel)
     }
+
 
     fun setOnClickLIstener(onClickListener: OnClickListener){
         this.onClickListener = onClickListener
     }
+
 
 
     private class MyViewHolder(view: View) : RecyclerView.ViewHolder(view)
