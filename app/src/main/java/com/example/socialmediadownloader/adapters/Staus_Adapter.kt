@@ -46,7 +46,7 @@ open class Staus_Adapter(val context: Activity, val files : ArrayList<files>) : 
                 filename = "VID_$currentDateTime.mp4"
             }else{
                 holder.itemView.status_play.visibility = View.GONE
-                filename = "VID_$currentDateTime.png"
+                filename = "IMG_$currentDateTime.png"
             }
 
             holder.itemView.staus_item.setOnClickListener {
