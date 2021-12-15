@@ -8,11 +8,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
-import android.os.AsyncTask
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.os.Environment
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -26,12 +22,17 @@ import com.example.socialmediadownloader.model.DownloadModel
 import io.realm.Realm
 import io.realm.RealmConfiguration
 import kotlinx.android.synthetic.main.activity_whatsapp_preview.*
-import java.io.File
-import java.io.FileInputStream
-import java.io.FileOutputStream
+import java.nio.Buffer
+import java.nio.ByteBuffer
 import java.nio.channels.FileChannel
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
+import android.content.ContentResolver
+import android.os.*
+import org.apache.commons.io.FileUtils
+import java.io.*
+
 
 class whatsapp_preview : AppCompatActivity() {
 
@@ -39,6 +40,7 @@ class whatsapp_preview : AppCompatActivity() {
     lateinit var realm : Realm
     lateinit var name : String
     lateinit var path : String
+    var isVideo : Boolean? = null
     val config = RealmConfiguration.Builder()
         .allowWritesOnUiThread(true)
         .build()
@@ -64,7 +66,7 @@ class whatsapp_preview : AppCompatActivity() {
         }
 
         path = intent.getStringExtra("path").toString()
-        val isVideo = intent.getBooleanExtra("isVideo", true)
+        isVideo = intent.getBooleanExtra("isVideo", true)
         val size = intent.getStringExtra("size")
         name = intent.getStringExtra("name").toString()
 
@@ -74,7 +76,7 @@ class whatsapp_preview : AppCompatActivity() {
 
 
 
-        if(path.length > 0 && path != null){
+        if(path.length > 0){
             Glide.with(this).asBitmap().placeholder(R.drawable.black).load(path).into(status_preview_image)
         }
 
@@ -82,7 +84,11 @@ class whatsapp_preview : AppCompatActivity() {
             status_preview_isvideo.visibility = View.VISIBLE
         }
 
-        staus_file_size.setText(size)
+        if(Build.VERSION.SDK_INT >= 30){
+            size_lay.visibility = View.GONE
+        }else{
+            staus_file_size.setText(size)
+        }
 
         back_whatsapp_preview.setOnClickListener{
             onBackPressed()
@@ -153,12 +159,27 @@ class whatsapp_preview : AppCompatActivity() {
 
                 var inputStream : FileChannel? = null
                 var outputStream : FileChannel? = null
+                var inputstream : InputStream? = null
+                var outputstream : OutputStream?= null
 
                 try{
-                    inputStream = FileInputStream(src).channel
-                    outputStream = FileOutputStream(dst).channel
-                    outputStream.transferFrom(inputStream,0,inputStream.size())
-                    Log.e("Done", "Done")
+                    if(Build.VERSION.SDK_INT >= 30){
+                        val buffer  = ByteArray(1000)
+                        val content: ContentResolver = this@whatsapp_preview.contentResolver
+                        inputstream = content.openInputStream(Uri.parse(params[1]))
+                        outputstream = FileOutputStream(dstpath);
+
+                        if (inputstream != null) {
+                            while(inputstream.read( buffer, 0, buffer.size) >= 0){
+                                outputstream.write(buffer,0,buffer.size)
+                            }
+                        }
+                    }else{
+                        inputStream = FileInputStream(src).channel
+                        outputStream = FileOutputStream(dst).channel
+                        outputStream.transferFrom(inputStream,0,inputStream.size())
+                        Log.e("Done", "Done")
+                    }
                 }finally {
                     if(inputStream!=null){
                         inputStream.close()
@@ -166,6 +187,14 @@ class whatsapp_preview : AppCompatActivity() {
 
                     if(outputStream != null){
                         outputStream.close()
+                    }
+
+                    if (inputstream != null) {
+                        inputstream.close()
+                    }
+
+                    if (outputstream != null) {
+                        outputstream.close()
                     }
                 }
 

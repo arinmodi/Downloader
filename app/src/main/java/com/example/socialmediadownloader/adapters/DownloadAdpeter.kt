@@ -34,7 +34,11 @@ open class DownloadAdpeter(private val context: Context, private var list: Array
         if(holder is MyViewHolder){
             holder.itemView.download_title.setText(model.title)
             holder.itemView.platform.setImageResource(model.platfrom)
-            holder.itemView.total_size.setText(model.total_size)
+            if(model.total_size == "Loading... "){
+                holder.itemView.size_d_lay.visibility = View.GONE
+            }else{
+                holder.itemView.total_size.setText(model.total_size)
+            }
             holder.itemView.download_date.setText(model.date)
 
             holder.itemView.setOnClickListener{

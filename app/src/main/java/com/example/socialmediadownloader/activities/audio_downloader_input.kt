@@ -1,7 +1,6 @@
 package com.example.socialmediadownloader.activities
 
 import android.Manifest
-import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -23,7 +22,7 @@ class audio_downloader_input : AppCompatActivity() {
         setContentView(R.layout.activity_audio_downloader_input)
 
         if(Build.VERSION.SDK_INT > 21){
-            window.statusBarColor = resources.getColor(R.color.audio_dark)
+            window.statusBarColor = ContextCompat.getColor(this,R.color.audio_dark)
         }
 
         back_audio.setOnClickListener {
@@ -67,7 +66,7 @@ class audio_downloader_input : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if(resultCode == Activity.RESULT_OK){
+        if(resultCode == RESULT_OK){
             if(requestCode == GALLERY_CODE){
                 if(data != null){
                     val uri : Uri = data.data as Uri

@@ -20,7 +20,7 @@
         android:requestLegacyExternalStorage="true"
         android:theme="@style/AppTheme"
         >
-        <activity android:name=".activities.spalsh_screen">
+        <activity android:name=".activities.spalsh_screen" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,7 +46,7 @@
 
         <receiver android:name=".utils.MyNewIntentService" />
 
-        <receiver android:name=".utils.DeviceBootReciver">
+        <receiver android:name=".utils.DeviceBootReciver" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
