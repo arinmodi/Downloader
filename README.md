@@ -34,7 +34,7 @@
 
 Home               |  Input               | Preview              
 :-------------------------:|:-------------------------:|:-------------------------:
-|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/Home.png" width = 250/>|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/input.png" width = 250/>|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/preview.png" width = 250/>|
+|<img src="https://user-images.githubusercontent.com/61725413/160234090-d81266a9-41a7-4e7d-8ac8-bf4d5c158100.png" width = 250/>|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/input.png" width = 250/>|<img src="https://github.com/arinmodi/Downloader/blob/master/app/src/main/res/drawable/preview.png" width = 250/>|
 
 Progress               |  Audio Extractor              | Downloads           
 :-------------------------:|:-------------------------:|:-------------------------:
@@ -68,9 +68,9 @@ Progress               |  Audio Extractor              | Downloads
 <br>
 
 <h2><p align="center">
-  Get it on
+  Get it on Play Store
 </p></h2>
 
-[<p align="center"><img src="https://betweenfriendscoffee.com/wp-content/uploads/2018/04/Android-app-on-Google-play-logo-vector-2.png" 
+[<p align="center"><img src="https://user-images.githubusercontent.com/61725413/160234296-b10f333d-cad7-45d3-91ff-1df03f615d11.png" 
      alt="Get it on Play"
      height=60 /></p>](https://play.google.com/store/apps/details?id=com.GenZ.socialmediadownloader)
