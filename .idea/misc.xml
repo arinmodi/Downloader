@@ -32,10 +32,12 @@
         <entry key="..\:/Socialmediadownloader/app/src/main/res/drawable/circle_black.xml" value="0.2611111111111111" />
         <entry key="..\:/Socialmediadownloader/app/src/main/res/drawable/circle_white.xml" value="0.2611111111111111" />
         <entry key="..\:/Socialmediadownloader/app/src/main/res/layout/activity_download.xml" value="0.36770833333333336" />
+        <entry key="..\:/Socialmediadownloader/app/src/main/res/layout/activity_facebook_preview.xml" value="0.20625" />
         <entry key="..\:/Socialmediadownloader/app/src/main/res/layout/activity_main.xml" value="0.36770833333333336" />
         <entry key="..\:/Socialmediadownloader/app/src/main/res/layout/activity_whatsapp_preview.xml" value="0.36770833333333336" />
         <entry key="..\:/Socialmediadownloader/app/src/main/res/layout/catgory_list.xml" value="0.36770833333333336" />
         <entry key="..\:/Socialmediadownloader/app/src/main/res/layout/download_item.xml" value="0.36770833333333336" />
+        <entry key="..\:/Socialmediadownloader/app/src/main/res/layout/insta_post.xml" value="0.33" />
       </map>
     </option>
   </component>

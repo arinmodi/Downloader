@@ -193,11 +193,11 @@
 
     <com.github.ybq.android.spinkit.SpinKitView
         android:id="@+id/progress_fb"
+        style="@style/SpinKitView.Large.FadingCircle"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        style="@style/SpinKitView.Large.FadingCircle"
-        android:layout_gravity="center"
         android:layout_centerInParent="true"
+        android:layout_gravity="center"
         app:SpinKit_Color="@color/facebook_dark" />
 
     <LinearLayout
@@ -219,7 +219,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Video not exist or invalid url"
+            android:text="Video is private or invalid url"
             android:textColor="#474747"
             android:textSize="16dp"
             android:gravity="center" />

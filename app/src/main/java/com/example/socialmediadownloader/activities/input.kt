@@ -1,5 +1,6 @@
 package com.example.socialmediadownloader.activities
 
+import android.annotation.SuppressLint
 import android.content.*
 import android.graphics.Color
 import android.graphics.Typeface
@@ -97,7 +98,7 @@ class input : AppCompatActivity() {
 
         download_button.setOnClickListener {
             download_button.isEnabled = false
-            val urlinput = url_input.text.toString()
+            var urlinput = url_input.text.toString()
             if(url_input.text.length == 0 || url_input.text == null ){
                 download_button.isEnabled = true
                 val toast = Toast.makeText(this, "Input Missing!", Toast.LENGTH_SHORT)
@@ -108,6 +109,13 @@ class input : AppCompatActivity() {
                     "Video" -> {
                         if (urlinput.contains("youtube") || urlinput.contains("youtu.be")) {
                             progress.visibility = View.VISIBLE
+                            if(urlinput.contains("shorts")){
+                                val removedShareUrl = urlinput.substringBefore("?")
+                                val pos = removedShareUrl.lastIndexOf("/");
+                                val id = removedShareUrl.substring(pos+1);
+                                urlinput = "https://youtu.be/$id";
+                            }
+                            Log.e("url : ", urlinput);
                             GetYouTubeDownloadUrl(urlinput)
                         } else {
                             download_button.isEnabled = true
@@ -124,16 +132,22 @@ class input : AppCompatActivity() {
                         if (urlinput.contains("instagram")) {
                             var finalurl = ""
                             if (urlinput.contains("?utm_source=ig.web_copy_link")) {
-                                val replace = "?utm_source=ig.web_copy_link"
+                                val replace = "/?utm_source=ig.web_copy_link"
                                 finalurl = urlinput.replace(replace, "")
                             } else if (urlinput.contains("?utm_medium=copy_link")) {
-                                val replace = "?utm_medium=copy_link"
+                                val replace = "/?utm_medium=copy_link"
                                 finalurl = urlinput.replace(replace, "")
-                            } else {
+                            } else if(urlinput.contains("?igshid")){
+                                val replace = "/?igshid"
+                                finalurl = urlinput.substringBefore(replace);
+                            }else{
                                 finalurl = urlinput
                             }
 
-                            finalurl = finalurl + "?__a=1"
+                            val pos = finalurl.lastIndexOf("/")
+                            val id = finalurl.substring(pos+1);
+
+                            finalurl = "https://www.instagram.com/p/$id/?__a=1";
 
                             Log.e("Final URI", finalurl)
 
@@ -152,7 +166,7 @@ class input : AppCompatActivity() {
                     }
 
                     "Face-Book" -> {
-                        if (urlinput.contains("facebook")) {
+                        if (urlinput.contains("fb.watch") || urlinput.contains("facebook")) {
                             val intent = Intent(this, facebook_preview::class.java)
                             intent.putExtra("link", urlinput)
                             download_button.isEnabled = true
@@ -172,17 +186,19 @@ class input : AppCompatActivity() {
     }
 
     private fun GetYouTubeDownloadUrl(link: String){
-        val yeEx : YouTubeExtractor = object : YouTubeExtractor(this){
+        val yeEx : YouTubeExtractor = @SuppressLint("StaticFieldLeak")
+        object : YouTubeExtractor(this){
 
+            @SuppressLint("StaticFieldLeak")
             override fun onExtractionComplete(
                 ytFiles: SparseArray<YtFile>?,
                 videoMeta: VideoMeta?
             ) {
+                Log.e("yt:", ytFiles.toString())
+                Log.e("vedio : ", videoMeta.toString())
                 if(ytFiles!= null && videoMeta != null && ytFiles.size() > 0){
                     Log.e("Execution", "Start")
-                    val itag = 22
-                    Log.e("yt:", ytFiles.toString())
-                    val iTags: List<Int> = Arrays.asList(22, 137, 18)
+                    val iTags: List<Int> = listOf(22, 137, 18)
                     var finalitag = 0
 
                     for(itag in iTags){

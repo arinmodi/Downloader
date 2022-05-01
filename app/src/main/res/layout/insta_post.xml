@@ -25,14 +25,14 @@
             android:layout_height="wrap_content">
 
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:scaleType="fitCenter"
-            android:background="@color/black"
-            android:src="@drawable/demoprofile"
-            android:foreground="#33000000"
-            android:id="@+id/display_image" />
+            <ImageView
+                android:id="@+id/display_image"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@color/black"
+                android:foreground="#33000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/demoprofile" />
 
         <ImageView
             android:id="@+id/video_insta"

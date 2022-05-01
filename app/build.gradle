@@ -19,8 +19,8 @@ android {
         applicationId "com.GenZ.socialmediadownloader"
         minSdkVersion 19
         targetSdkVersion 31
-        versionCode 11
-        versionName "5.2.4"
+        versionCode 12
+        versionName "6.0.0"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
