@@ -140,7 +140,7 @@ class whatsapp_preview : AppCompatActivity() {
 
         override fun doInBackground(vararg params: String?): Array<String> {
             var dir = Environment.getExternalStoragePublicDirectory("DL- All In One Downloader/Whatsapp").absolutePath
-            if(Build.VERSION.SDK_INT > 29){
+            if(Build.VERSION.SDK_INT >= 29){
                 dir = "/storage/emulated/0/" + Environment.DIRECTORY_DOWNLOADS.toString() + "/DL- All In One Downloader/Whatsapp"
             }
             val dstpath = dir + "/" + params[0]

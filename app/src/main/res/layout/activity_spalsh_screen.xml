@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:paddingBottom="80dp"
-    tools:context=".activities.spalsh_screen">
+    tools:context=".activities.SplashScreen">
 
     <ImageView
         android:layout_width="100dp"

@@ -11,7 +11,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ShareCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.socialmediadownloader.R
 import com.example.socialmediadownloader.adapters.DownloadAdpeter
 import com.example.socialmediadownloader.model.DownloadModel
@@ -59,9 +58,9 @@ class Download : AppCompatActivity() {
         }
 
         delete.setOnClickListener {
-            val dialog = Confimtaio_Dialog(this)
+            val dialog = ConfirmationDialog(this)
             dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-            dialog.setOnClickListener(object : Confimtaio_Dialog.OnClickListener{
+            dialog.setOnClickListener(object : ConfirmationDialog.OnClickListener{
                 override fun onClick() {
                     realm.executeTransactionAsync(object : Realm.Transaction{
                         override fun execute(realm: Realm) {

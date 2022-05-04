@@ -10,7 +10,7 @@ import com.example.socialmediadownloader.model.DownloadModel
 import io.realm.Realm
 import kotlinx.android.synthetic.main.confimtaio__dialog.*
 
-class Confimtaio_Dialog(val a : Activity) : Dialog(a) {
+class ConfirmationDialog(val a : Activity) : Dialog(a) {
 
     private var onClickListener : OnClickListener? = null
 

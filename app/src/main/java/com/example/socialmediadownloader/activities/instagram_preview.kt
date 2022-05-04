@@ -146,7 +146,7 @@ class instagram_preview : AppCompatActivity() {
             file_name = file_name + ".png"
         }
 
-        if(Build.VERSION.SDK_INT > 29){
+        if(Build.VERSION.SDK_INT >= 29){
             request.setDestinationInExternalPublicDir(
                 Environment.DIRECTORY_DOWNLOADS,
                 "/DL- All In One Downloader/Instagram/" + file_name
@@ -175,7 +175,7 @@ class instagram_preview : AppCompatActivity() {
         val formattedDate: String = df.format(c)
 
         var filepath = Environment.getExternalStoragePublicDirectory("DL- All In One Downloader/Instagram").absolutePath + "/" + file_name
-        if(Build.VERSION.SDK_INT > 29){
+        if(Build.VERSION.SDK_INT >= 29){
             filepath = "/storage/emulated/0/" + Environment.DIRECTORY_DOWNLOADS + "/DL- All In One Downloader/Instagram/" + file_name
         }
 

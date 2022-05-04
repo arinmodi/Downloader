@@ -31,7 +31,6 @@ import kotlinx.android.synthetic.main.activity_extrcation__dialog.*
 import java.io.File
 import java.io.IOException
 import java.util.concurrent.TimeUnit
-import java.util.regex.Pattern
 import kotlin.jvm.Throws
 import android.media.MediaCodec
 
@@ -42,7 +41,6 @@ import android.media.MediaMetadataRetriever
 import android.media.MediaFormat
 
 import android.media.MediaMuxer
-import android.view.View
 import com.example.socialmediadownloader.model.DownloadModel
 import io.realm.Realm
 import io.realm.RealmConfiguration
@@ -53,7 +51,7 @@ import java.util.*
 import kotlin.collections.HashMap
 
 
-class audio_extract : AppCompatActivity() {
+class AudioExtract : AppCompatActivity() {
 
     lateinit var videostoragepath: String
     lateinit var newdownloadmodel : DownloadModel
@@ -72,7 +70,7 @@ class audio_extract : AppCompatActivity() {
     private val TAG = "AudioExtractorDecoder"
 
     private fun getVideoLength(uri: Uri) {
-        val mp = MediaPlayer.create(this@audio_extract, uri)
+        val mp = MediaPlayer.create(this@AudioExtract, uri)
         totalDur = mp.duration
         videolenghtInSec = TimeUnit.MICROSECONDS.toSeconds(mp.duration.toLong())
         mp.release()
@@ -178,7 +176,7 @@ class audio_extract : AppCompatActivity() {
 
     fun extractAudio() {
         var myFolderPath = Environment.getExternalStoragePublicDirectory("DL- All In One Downloader/Audio").absolutePath.toString()
-        if(Build.VERSION.SDK_INT > 29){
+        if(Build.VERSION.SDK_INT >= 29){
             myFolderPath = "/storage/emulated/0/" + Environment.DIRECTORY_DOWNLOADS.toString() + "/DL- All In One Downloader/Audio"
         }
         dest = (myFolderPath + "/" + file_name + ".mp3")
@@ -334,12 +332,12 @@ class audio_extract : AppCompatActivity() {
                 val intent = Intent(Intent.ACTION_VIEW)
                 intent.setDataAndType(selectedUri, "audio/*")
                 val contentintent = PendingIntent.getActivity(
-                    this@audio_extract,
+                    this@AudioExtract,
                     0,
                     intent,
                     PendingIntent.FLAG_CANCEL_CURRENT
                 )
-                val notification = NotificationCompat.Builder(this@audio_extract, CHANNEL_ID)
+                val notification = NotificationCompat.Builder(this@AudioExtract, CHANNEL_ID)
                 notification.setContentTitle("DL-All In One Downloader")
                 notification.setContentText("Audio is sucessfully Extracted from your file")
                 notification.setSmallIcon(R.drawable.download)
@@ -350,10 +348,10 @@ class audio_extract : AppCompatActivity() {
                 notification.setAutoCancel(true)
                 notification.setContentIntent(contentintent)
 
-                val managerCompat = NotificationManagerCompat.from(this@audio_extract)
+                val managerCompat = NotificationManagerCompat.from(this@AudioExtract)
                 managerCompat.notify(1, notification.build())
                 extraction_dialog.dismiss()
-                Toast.makeText(this@audio_extract, "Extraction Complted", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@AudioExtract, "Extraction Complted", Toast.LENGTH_LONG).show()
                 finish()
             }
 

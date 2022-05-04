@@ -10,7 +10,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.socialmediadownloader.R
-import com.example.socialmediadownloader.activities.audio_downloader_input
+import com.example.socialmediadownloader.activities.AudioDownloaderInput
 import com.example.socialmediadownloader.activities.input
 import com.example.socialmediadownloader.activities.whatsapp_status_list
 import com.example.socialmediadownloader.model.CategoryModel
@@ -48,7 +48,7 @@ open class Cat_Adapter(context : Activity, categories : ArrayList<CategoryModel>
             card.setOnClickListener {
                 when(curruntItem.cat_name){
                     "Audio" -> {
-                        val intent = Intent(context, audio_downloader_input::class.java)
+                        val intent = Intent(context, AudioDownloaderInput::class.java)
                         context.startActivity(intent)
                     }
 

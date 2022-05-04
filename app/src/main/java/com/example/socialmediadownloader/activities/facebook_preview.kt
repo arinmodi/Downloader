@@ -147,7 +147,7 @@ class facebook_preview : AppCompatActivity() {
         request.setTitle(downloadTitle)
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
 
-        if(Build.VERSION.SDK_INT > 29){
+        if(Build.VERSION.SDK_INT >= 29){
             request.setDestinationInExternalPublicDir(
                 Environment.DIRECTORY_DOWNLOADS,
                 "/DL- All In One Downloader/Facebook/" + name_of_file + ".mp4"
@@ -177,7 +177,7 @@ class facebook_preview : AppCompatActivity() {
 
 
         var filepath = Environment.getExternalStoragePublicDirectory("DL- All In One Downloader/Facebook").absolutePath + "/" + name_of_file + ".mp4"
-        if(Build.VERSION.SDK_INT > 29){
+        if(Build.VERSION.SDK_INT >= 29){
             filepath = "/storage/emulated/0/" + Environment.DIRECTORY_DOWNLOADS + "/DL- All In One Downloader/Facebook/" + name_of_file + ".mp4"
         }
 

@@ -151,7 +151,7 @@ class youtube_preview : AppCompatActivity() {
         val request = DownloadManager.Request(uri)
         request.setTitle(downloadTitle)
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
-        if(Build.VERSION.SDK_INT > 29){
+        if(Build.VERSION.SDK_INT >= 29){
             request.setDestinationInExternalPublicDir(
                 Environment.DIRECTORY_DOWNLOADS,
                 "/DL- All In One Downloader/YouTube/" + fileName + ".mp4"
@@ -180,7 +180,7 @@ class youtube_preview : AppCompatActivity() {
         val formattedDate: String = df.format(c)
 
         var filepath = Environment.getExternalStoragePublicDirectory("DL- All In One Downloader/YouTube").absolutePath + "/" + fileName + ".mp4"
-        if(Build.VERSION.SDK_INT > 29){
+        if(Build.VERSION.SDK_INT >= 29){
             filepath = "/storage/emulated/0/" + Environment.DIRECTORY_DOWNLOADS.toString() + "/DL- All In One Downloader/YouTube/" + fileName + ".mp4"
         }
 

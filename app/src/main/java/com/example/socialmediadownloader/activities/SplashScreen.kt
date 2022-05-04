@@ -1,5 +1,6 @@
 package com.example.socialmediadownloader.activities
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -8,7 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.socialmediadownloader.R
 
 
-class spalsh_screen : AppCompatActivity() {
+@SuppressLint("CustomSplashScreen")
+class SplashScreen : AppCompatActivity() {
 
     private val SPLASH_DISPLAY_LENGTH = 2000
 

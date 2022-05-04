@@ -19,25 +19,30 @@
         android:requestLegacyExternalStorage="true"
         android:theme="@style/AppTheme"
         >
-        <activity android:name=".activities.spalsh_screen" android:exported="true">
+        <activity android:name=".activities.SplashScreen" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.no_internet_dialog" />
+        <activity android:name=".activities.no_internet_dialog"
+            tools:ignore="Instantiatable" />
         <activity android:name=".activities.video_play_activity" />
         <activity android:name=".activities.whatsapp_preview" />
         <activity android:name=".activities.whatsapp_status_list" />
-        <activity android:name=".activities.Confimtaio_Dialog" />
-        <activity android:name=".activities.error_dialog" />
-        <activity android:name=".activities.Extrcation_Dialog" />
-        <activity android:name=".activities.audio_extract" />
-        <activity android:name=".activities.audio_downloader_input" />
+        <activity android:name=".activities.ConfirmationDialog"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".activities.error_dialog"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".activities.Extrcation_Dialog"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".activities.AudioExtract" />
+        <activity android:name=".activities.AudioDownloaderInput" />
         <activity android:name=".activities.facebook_preview" />
         <activity android:name=".activities.instagram_preview" />
-        <activity android:name=".activities.ProgressDialog" />
+        <activity android:name=".activities.ProgressDialog"
+            tools:ignore="Instantiatable" />
         <activity android:name=".activities.Download" />
         <activity android:name=".activities.youtube_preview" />
         <activity android:name=".activities.input" />

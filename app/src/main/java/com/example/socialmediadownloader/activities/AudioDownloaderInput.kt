@@ -15,7 +15,7 @@ import com.example.socialmediadownloader.R
 import kotlinx.android.synthetic.main.activity_audio_downloader_input.*
 import java.io.File
 
-class audio_downloader_input : AppCompatActivity() {
+class AudioDownloaderInput : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,7 +53,7 @@ class audio_downloader_input : AppCompatActivity() {
             if(grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                 getVideoFromStorage()
             }else{
-                Toast.makeText(this, "Permission Denied", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Permission Denied", Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -79,7 +79,7 @@ class audio_downloader_input : AppCompatActivity() {
                     }else{
                         if(getPath(uri).length > 0){
                             val filename = path.substring(path.lastIndexOf("/") + 1)
-                            val intent = Intent(this, audio_extract::class.java)
+                            val intent = Intent(this, AudioExtract::class.java)
                             intent.putExtra("name", filename + "")
                             intent.putExtra("path", path)
                             intent.putExtra("uri", getPath(uri))
